@@ -57,7 +57,7 @@ A RESTful API built with Express.js and PostgreSQL for managing user data with f
    - Default login email and password will be shown in the extension interface
 5. Configure your PostgreSQL connection in pgAdmin4:
    - Add new server:
-     - Name: Local PostgreSQL
+     - Name: postgresdb
      - Host: host.docker.internal
      - Port: 5432
      - Username: postgres
