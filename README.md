@@ -14,10 +14,13 @@ A RESTful API built with Express.js and PostgreSQL for managing user data with f
 ## Prerequisites
 
 - Node.js
-- PostgreSQL
 - npm or yarn
+- Docker (required for PostgreSQL and pgAdmin4)
+- Git
 
 ## Installation
+
+### Standard Setup
 
 1. Clone the repository
 2. Install dependencies:
@@ -33,6 +36,32 @@ A RESTful API built with Express.js and PostgreSQL for managing user data with f
    DB_PASSWORD=postgres
    DB_PORT=5432
    ```
+
+### Docker Setup
+
+1. Make sure Docker Desktop is installed and running
+2. Install pgAdmin4 from Docker Desktop:
+   - Open Docker Desktop
+   - Go to the Extensions/Add-ons section
+   - Search for pgAdmin4
+   - Click Install
+3. Install PostgreSQL in a Docker container:
+   ```bash
+   docker pull postgres:latest
+   docker run --name postgres-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+   ```
+4. Access pgAdmin4:
+   - Open Docker Desktop
+   - Go to the Extensions section
+   - Click on pgAdmin4 to launch it
+   - Default login email and password will be shown in the extension interface
+5. Configure your PostgreSQL connection in pgAdmin4:
+   - Add new server:
+     - Name: Local PostgreSQL
+     - Host: host.docker.internal
+     - Port: 5432
+     - Username: postgres
+     - Password: postgres
 
 ## Database Setup
 
@@ -108,6 +137,9 @@ The API includes middleware for handling various types of errors:
 - CORS
 - dotenv
 - Joi (Data Validation)
+- Docker
+- pgAdmin4
+
 
 ## Data Validation
 

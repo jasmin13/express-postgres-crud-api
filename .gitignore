@@ -29,3 +29,10 @@ coverage
 # System Files
 .DS_Store
 Thumbs.db
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# pgAdmin
+/pgadmin-data/
